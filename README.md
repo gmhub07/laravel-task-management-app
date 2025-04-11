@@ -35,7 +35,7 @@ This is a web application built with Laravel (version 12.x) and React (version 1
 
 ## Installation
 
-### Using Docker
+### Using Docker for Database
 
 1. **Clone the repository:**
    ```bash
@@ -43,22 +43,21 @@ This is a web application built with Laravel (version 12.x) and React (version 1
    cd project-management-app
    ```
 
-2. **Build and run the Docker containers:**
+2. **Build and run the Docker containers for the database:**
    ```bash
-   docker-compose up -d
+   docker compose up
    ```
 
-3. **Access the application:**
-   Open your browser and navigate to `http://localhost`.
-
-4. **Access Adminer for database management:**
+3. **Access Adminer for database management:**
    Open your browser and navigate to `http://localhost:8080`. Use the following credentials:
    - **System:** MySQL
    - **Server:** db
    - **Username:** root
    - **Password:** yourpassword (as defined in your `.env` file)
 
-### Local Development (Without Docker)
+   Note: The database is running on Docker, and Adminer (which in an lightweight version of phpmyadmin) is used for managing the MySQL database.
+
+### Local Development
 
 1. **Install dependencies:**
    ```bash
@@ -81,12 +80,12 @@ This is a web application built with Laravel (version 12.x) and React (version 1
    php artisan migrate
    ```
 
-5. **Start the development server:**
+5. **Start the backend development server (local):**
    ```bash
    php artisan serve
    ```
 
-6. **In a separate terminal, run:**
+6. **In a separate terminal, run the frontend (react) development server using vite:**
    ```bash
    npm run dev
    ```
@@ -99,14 +98,14 @@ In your `.env` file, you can configure the database connection for Docker as fol
 
 ```env
 DB_CONNECTION=mysql
-DB_HOST=db
+DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=your_database_name
 DB_USERNAME=root
 DB_PASSWORD=yourpassword
 ```
 
-Make sure to replace `your_database_name` and `yourpassword` with your actual database name and password.
+Make sure to replace `your_database_name` and `yourpassword` with your actual database name you want to keep and it's password.
 
 ## Contributing
 
