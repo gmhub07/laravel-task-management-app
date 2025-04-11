@@ -23,7 +23,7 @@
 
 ## About the Project
 
-This is a web application built with Laravel and React for managing projects and tasks. The application provides a user-friendly interface for creating, viewing, and managing projects and their associated tasks.
+This is a web application built with Laravel (version 12.x) and React (version 18.x) for managing projects and tasks. The application provides a user-friendly interface for creating, viewing, and managing projects and their associated tasks. It utilizes Inertia.js (version 2.x) for seamless navigation between pages.
 
 ### Features
 
